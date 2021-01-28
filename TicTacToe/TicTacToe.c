@@ -21,11 +21,11 @@ void printBoard(char board[3][3])
     system("cls"); // czyszczenie ekranu ekran
     printf("********************************************************************************\n");
     printf("-============================== KOLKO I KRZYZYK ================================\n");
-    printf("********************************************************************************\n");
-    printf("    [ ][1][2][3]\n");
-    printf("    [1][%c][%c][%c]\n", board[0][0], board[0][1], board[0][2]);
-    printf("    [2][%c][%c][%c]\n", board[1][0], board[1][1], board[1][2]);
-    printf("    [3][%c][%c][%c]\n", board[2][0], board[2][1], board[2][2]);
+    printf("********************************************************************************\n\n");
+    printf("                                [ ][1][2][3]\n");
+    printf("                                [1][%c][%c][%c]\n", board[0][0], board[0][1], board[0][2]);
+    printf("                                [2][%c][%c][%c]\n", board[1][0], board[1][1], board[1][2]);
+    printf("                                [3][%c][%c][%c]\n", board[2][0], board[2][1], board[2][2]);
 }
 
 int isBoardFull(char board[3][3])
@@ -48,14 +48,14 @@ void playerMove(char board[3][3])
     unsigned int row , col;
     printBoard(board);
     printf("Podaj wiersz i kolumne w ktorej chcesz wstawic krzyzyk\n");
-    scanf_s("%u %u", &row, &col);
+    scanf("%u %u", &row, &col);
     --row;
     --col;
     while ((row > 2) || (col > 2) || (board[row][col] != ' '))
     {
         printf("Podano niepoprawny wiersz lub kolumne\n");
         printf("Podaj wiersz i kolumne w ktorej chcesz wstawic krzyzyk\n");
-        scanf_s("%u %u", &row, &col);
+        scanf("%u %u", &row, &col);
         --row;
         --col;
 
@@ -67,14 +67,14 @@ void secondPlayerMove(char board[3][3])
     unsigned int row, col;
     printBoard(board);
     printf("Podaj wiersz i kolumne w ktorej chcesz wstawic kolko\n");
-    scanf_s("%u %u", &row, &col);
+    scanf("%u %u", &row, &col);
     --row;
     --col;
     while ((row > 2) || (col > 2) || (board[row][col] != ' '))
     {
         printf("Podano niepoprawny wiersz lub kolumne\n");
         printf("Podaj wiersz i kolumne w ktorej chcesz wstawic kolko\n");
-        scanf_s("%u %u", &row, &col);
+        scanf("%u %u", &row, &col);
         --row;
         --col;
 
@@ -234,7 +234,7 @@ int main(int argc, char* argv[])
         printf("-============================== KOLKO I KRZYZYK ================================\n");
         printf("********************************************************************************\n");
         printf("M-Gra z druga osoba., E-Z komputerem, poziom latwy T-Z komputerem, poziom trudny\n");
-        printf("Naciśnij 'Z' aby zakończyć program *********************************************\n");
+        printf("Nacisnij 'Z' aby zakonczyc program *********************************************\n");
         selectGame = getchar();
         switch (selectGame)
         {
